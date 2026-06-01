@@ -1,9 +1,18 @@
+<!-- ====== PHASE 2 MEGA UPGRADE ====== -->
+
+<!-- Paste this FULL code inside index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>KUMBH AI</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
 <style>
 
@@ -11,7 +20,8 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
@@ -19,6 +29,49 @@ background:black;
 color:white;
 overflow-x:hidden;
 }
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+border-bottom:1px solid #111;
+}
+
+.logo{
+font-size:32px;
+font-weight:bold;
+color:#00aaff;
+text-shadow:0 0 15px #00aaff;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-size:17px;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#00aaff;
+}
+
+/* HERO */
 
 .hero{
 height:100vh;
@@ -28,41 +81,73 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:20px;
+position:relative;
+overflow:hidden;
 background:
-radial-gradient(circle at top,#0a1f44 0%,black 70%);
+radial-gradient(circle at top,#001133 0%,black 70%);
 }
 
-.logo{
-font-size:80px;
-font-weight:bold;
-color:#00aaff;
-text-shadow:0 0 20px #00aaff;
-margin-bottom:20px;
-animation:glow 2s infinite alternate;
+.hero::before{
+content:'';
+position:absolute;
+width:600px;
+height:600px;
+background:#00aaff22;
+filter:blur(120px);
+border-radius:50%;
+animation:move 10s infinite alternate;
 }
 
-@keyframes glow{
+@keyframes move{
 from{
-text-shadow:0 0 10px #00aaff;
+transform:translate(-200px,-100px);
 }
 to{
-text-shadow:0 0 35px #0066ff;
+transform:translate(200px,100px);
 }
 }
 
-.heading{
-font-size:55px;
-font-weight:bold;
+.hero h1{
+font-size:85px;
+color:#00aaff;
+text-shadow:0 0 25px #00aaff;
 margin-bottom:20px;
-max-width:900px;
+z-index:2;
 }
 
-.subtext{
-font-size:20px;
-color:#bbb;
-max-width:800px;
-line-height:1.8;
+.hero h2{
+font-size:60px;
+margin-bottom:25px;
+z-index:2;
+}
+
+.typing{
+font-size:22px;
+color:#ccc;
 margin-bottom:40px;
+z-index:2;
+border-right:2px solid #00aaff;
+white-space:nowrap;
+overflow:hidden;
+width:0;
+animation:
+typing 5s steps(40,end) forwards,
+blink 1s infinite;
+}
+
+@keyframes typing{
+from{
+width:0;
+}
+to{
+width:720px;
+}
+}
+
+@keyframes blink{
+50%{
+border-color:transparent;
+}
 }
 
 .buttons{
@@ -70,6 +155,7 @@ display:flex;
 gap:20px;
 flex-wrap:wrap;
 justify-content:center;
+z-index:2;
 }
 
 .btn{
@@ -96,83 +182,182 @@ color:#00aaff;
 transform:scale(1.08);
 }
 
+/* SECTION */
+
 .section{
-padding:100px 20px;
+padding:120px 8%;
 text-align:center;
 }
 
 .section h2{
-font-size:45px;
-margin-bottom:20px;
+font-size:50px;
+margin-bottom:25px;
 color:#00aaff;
 }
 
 .section p{
 font-size:20px;
 color:#ccc;
-max-width:900px;
+max-width:950px;
 margin:auto;
-line-height:1.8;
+line-height:1.9;
 }
+
+/* CARDS */
 
 .cards{
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
-gap:30px;
-margin-top:50px;
+gap:35px;
+margin-top:60px;
 }
 
 .card{
 background:#081120;
 border:1px solid #113366;
-padding:35px;
-width:280px;
+padding:40px;
+width:300px;
 border-radius:20px;
-transition:0.3s;
+transition:0.4s;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:'';
+position:absolute;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:linear-gradient(
+transparent,
+#00aaff33,
+transparent);
+transform:rotate(45deg);
+animation:shine 5s infinite;
+}
+
+@keyframes shine{
+0%{
+transform:translateX(-100%) rotate(45deg);
+}
+100%{
+transform:translateX(100%) rotate(45deg);
+}
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px #00aaff55;
+transform:translateY(-12px);
+box-shadow:0 0 30px #00aaff55;
 }
 
 .card h3{
 color:#00aaff;
-margin-bottom:15px;
-font-size:25px;
+margin-bottom:18px;
+font-size:28px;
 }
 
 .card p{
-font-size:16px;
+font-size:17px;
 color:#bbb;
-line-height:1.7;
+line-height:1.8;
 }
 
-footer{
-padding:35px;
-text-align:center;
-border-top:1px solid #111;
-background:#050505;
-color:#777;
+/* CONTACT */
+
+.contact-box{
+margin-top:50px;
+display:flex;
+flex-direction:column;
+gap:20px;
+align-items:center;
 }
 
-@media(max-width:768px){
-
-.logo{
-font-size:55px;
-}
-
-.heading{
-font-size:38px;
-}
-
-.subtext{
+.contact-box input,
+.contact-box textarea{
+width:90%;
+max-width:600px;
+padding:18px;
+background:#081120;
+border:1px solid #113366;
+border-radius:12px;
+color:white;
 font-size:17px;
 }
 
-.section h2{
+.contact-box button{
+padding:15px 40px;
+border:none;
+border-radius:50px;
+background:#00aaff;
+color:white;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 0 20px #00aaff;
+}
+
+/* FOOTER */
+
+footer{
+padding:40px;
+text-align:center;
+border-top:1px solid #111;
+background:#050505;
+color:#888;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
 font-size:35px;
+color:white;
+text-decoration:none;
+box-shadow:0 0 20px #25D366;
+z-index:1000;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+padding:15px 5%;
+}
+
+nav ul{
+display:none;
+}
+
+.hero h1{
+font-size:55px;
+}
+
+.hero h2{
+font-size:38px;
+}
+
+.typing{
+font-size:16px;
+width:100%;
+animation:none;
+border:none;
+}
+
+.section h2{
+font-size:38px;
 }
 
 }
@@ -182,48 +367,69 @@ font-size:35px;
 
 <body>
 
-<div class="hero">
+<!-- NAVBAR -->
+
+<nav>
 
 <div class="logo">
 KUMBH AI
 </div>
 
-<div class="heading">
-Building India’s AI Empire
-</div>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
-<div class="subtext">
-KUMBH AI is creating the future through Artificial Intelligence,
-Business Automation, Innovation, Smart Technology and Digital Power.
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>KUMBH AI</h1>
+
+<h2>Building India’s AI Empire</h2>
+
+<div class="typing">
+Future AI • Innovation • Automation • Digital Power
 </div>
 
 <div class="buttons">
 
-<a href="https://instagram.com/kumbhai.ai" class="btn primary">
+<a href="https://instagram.com/kumbhai.ai"
+class="btn primary">
 Instagram
 </a>
 
-<a href="https://youtube.comk/kumbhai_official" class="btn secondary">
+<a href="https://youtube.com/kumbhai_official"
+class="btn secondary">
 YouTube
 </a>
 
 </div>
 
-</div>
+</section>
 
-<div class="section">
+<!-- ABOUT -->
+
+<section class="section" id="about">
 
 <h2>About KUMBH AI</h2>
 
 <p>
 KUMBH AI is a futuristic Indian AI ecosystem focused on innovation,
-technology, branding, automation and next generation digital systems.
-We aim to build powerful AI solutions for the future.
+technology, automation, branding and digital transformation.
+We are building next generation AI systems and business solutions
+for the future.
 </p>
 
-</div>
+</section>
 
-<div class="section">
+<!-- SERVICES -->
+
+<section class="section" id="services">
 
 <h2>Our Services</h2>
 
@@ -231,26 +437,83 @@ We aim to build powerful AI solutions for the future.
 
 <div class="card">
 <h3>AI Branding</h3>
-<p>Modern AI branding and futuristic digital identity creation.</p>
+<p>
+Modern AI branding and futuristic digital identity creation.
+</p>
 </div>
 
 <div class="card">
 <h3>AI Automation</h3>
-<p>Smart systems and automation for business growth.</p>
+<p>
+Smart systems and automation tools for business growth.
+</p>
 </div>
 
 <div class="card">
 <h3>Future Innovation</h3>
-<p>Building next generation technology and AI solutions.</p>
+<p>
+Building next generation AI technology and digital systems.
+</p>
 </div>
 
 </div>
 
+</section>
+
+<!-- CONTACT -->
+
+<section class="section" id="contact">
+
+<h2>Contact Us</h2>
+
+<p>
+Let’s build the future together with KUMBH AI.
+</p>
+
+<div class="contact-box">
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Your Email">
+
+<textarea rows="6"
+placeholder="Your Message"></textarea>
+
+<button>
+Send Message
+</button>
+
 </div>
+
+</section>
+
+<!-- FOOTER -->
 
 <footer>
+
 © 2026 KUMBH AI • All Rights Reserved
+
+<br><br>
+
+Email:
+kumbhgroup169@gmail.com
+
+<br>
+
+Phone:
+8650171958
+
 </footer>
+
+<!-- WHATSAPP -->
+
+<a class="whatsapp"
+href="https://wa.me/918650171958"
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
 
 </body>
 </html>
