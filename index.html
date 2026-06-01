@@ -6,6 +6,7 @@
   <title>KUMBH AI</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -16,138 +17,190 @@
     body{
       background:black;
       color:white;
-      text-align:center;
-    }
-
-    header{
-      padding:25px;
-      border-bottom:1px solid #222;
-    }
-
-    header h1{
-      color:#f5b942;
-      font-size:42px;
-      letter-spacing:2px;
+      overflow-x:hidden;
     }
 
     .hero{
-      padding:100px 20px;
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+      background: radial-gradient(circle at top, #222 0%, black 70%);
     }
 
-    .hero h2{
-      font-size:55px;
+    h1{
+      font-size:70px;
+      color:#ffb300;
+      text-shadow:0 0 20px #ffb300;
       margin-bottom:20px;
+      animation: glow 2s infinite alternate;
     }
 
-    .hero p{
-      font-size:20px;
+    @keyframes glow{
+      from{
+        text-shadow:0 0 10px #ffb300;
+      }
+      to{
+        text-shadow:0 0 30px #ff9900;
+      }
+    }
+
+    .subtitle{
+      font-size:28px;
+      margin-bottom:20px;
+      font-weight:bold;
+    }
+
+    .desc{
+      max-width:800px;
+      font-size:18px;
       color:#ccc;
-      max-width:700px;
-      margin:auto;
-      line-height:1.6;
+      line-height:1.8;
+      margin-bottom:40px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+      justify-content:center;
     }
 
     .btn{
-      display:inline-block;
-      margin-top:35px;
       padding:15px 35px;
-      background:#f5b942;
-      color:black;
-      text-decoration:none;
-      border-radius:10px;
-      font-weight:bold;
+      border:none;
+      border-radius:50px;
+      font-size:18px;
+      cursor:pointer;
       transition:0.3s;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .yt{
+      background:red;
+      color:white;
+      box-shadow:0 0 20px red;
+    }
+
+    .ig{
+      background:#ff00aa;
+      color:white;
+      box-shadow:0 0 20px #ff00aa;
     }
 
     .btn:hover{
-      background:white;
+      transform:scale(1.1);
     }
 
     .section{
-      padding:80px 20px;
+      padding:100px 20px;
+      text-align:center;
     }
 
-    .cards{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:25px;
-      margin-top:40px;
+    .section h2{
+      font-size:45px;
+      color:#ffb300;
+      margin-bottom:20px;
     }
 
-    .card{
-      background:#111;
-      border:1px solid #333;
-      width:280px;
-      padding:30px;
-      border-radius:20px;
-      transition:0.3s;
-    }
-
-    .card:hover{
-      transform:translateY(-10px);
-      border-color:#f5b942;
-    }
-
-    .card h3{
-      color:#f5b942;
-      margin-bottom:15px;
+    .section p{
+      max-width:900px;
+      margin:auto;
+      font-size:20px;
+      line-height:1.8;
+      color:#ddd;
     }
 
     footer{
       padding:30px;
-      border-top:1px solid #222;
+      text-align:center;
+      background:#111;
       color:#888;
-      margin-top:50px;
+      border-top:1px solid #222;
     }
+
+    @media(max-width:768px){
+
+      h1{
+        font-size:45px;
+      }
+
+      .subtitle{
+        font-size:22px;
+      }
+
+      .desc{
+        font-size:16px;
+      }
+
+      .section h2{
+        font-size:35px;
+      }
+
+    }
+
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>KUMBH AI</h1>
-</header>
+  <div class="hero">
 
-<section class="hero">
-  <h2>Building The Future With AI</h2>
+    <h1>KUMBH AI</h1>
 
-  <p>
-    KUMBH AI is focused on Artificial Intelligence,
-    Innovation, Business Growth and Future Technology.
-  </p>
-
-  <a href="https://instagram.com/kumbhai.ai" class="btn">
-    Join Community
-  </a>
-</section>
-
-<section class="section">
-  <h2>Our Vision</h2>
-
-  <div class="cards">
-
-    <div class="card">
-      <h3>AI Solutions</h3>
-      <p>Modern AI tools and automation for future businesses.</p>
+    <div class="subtitle">
+      Building The Future With Artificial Intelligence
     </div>
 
-    <div class="card">
-      <h3>Innovation</h3>
-      <p>Creating futuristic ideas with technology and creativity.</p>
+    <div class="desc">
+      KUMBH AI is a futuristic innovation brand focused on AI technology,
+      business growth, digital power, automation, and next generation ideas.
+      We are creating the future of smart business and AI revolution.
     </div>
 
-    <div class="card">
-      <h3>Business Growth</h3>
-      <p>Helping brands grow using AI and digital systems.</p>
+    <div class="buttons">
+
+      <a href="https://youtube.com" class="btn yt">
+        YouTube
+      </a>
+
+      <a href="https://instagram.com" class="btn ig">
+        Instagram
+      </a>
+
     </div>
 
   </div>
-</section>
 
-<footer>
-  © 2026 KUMBH AI | kumbhai.in
-</footer>
+  <div class="section">
+
+    <h2>Our Vision</h2>
+
+    <p>
+      Our mission is to make KUMBH AI a global futuristic brand from India.
+      We aim to build AI tools, digital platforms, powerful content,
+      and innovative businesses that inspire millions of people.
+    </p>
+
+  </div>
+
+  <div class="section">
+
+    <h2>Why KUMBH AI?</h2>
+
+    <p>
+      Innovation • AI Power • Business Growth • Smart Future • Digital Empire
+    </p>
+
+  </div>
+
+  <footer>
+    © 2026 KUMBH AI | All Rights Reserved
+  </footer>
 
 </body>
 </html>
